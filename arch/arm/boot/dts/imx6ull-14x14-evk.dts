@@ -718,6 +718,33 @@
 			>;
 		};
 
+		pinctrl_ecspi1: ecspi1grp {
+			fsl,pins = <
+				MX6UL_PAD_LCD_DATA23__ECSPI1_MISO	0x1b0b1
+				MX6UL_PAD_LCD_DATA22__ECSPI1_MOSI	0x1b0b1
+				MX6UL_PAD_LCD_DATA20__ECSPI1_SCLK 	0x1b0b1
+				MX6UL_PAD_LCD_DATA21__ECSPI1_SS0	0x1b0b1
+			>;
+		};
+
+		pinctrl_ecspi2: ecspi2grp {
+			fsl,pins = <
+				MX6UL_PAD_CSI_DATA03__ECSPI2_MISO	0x1b0b1
+				MX6UL_PAD_CSI_DATA02__ECSPI2_MOSI	0x1b0b1
+				MX6UL_PAD_CSI_DATA00__ECSPI2_SCLK 	0x1b0b1
+				MX6UL_PAD_CSI_DATA01__ECSPI2_SS0	0x1b0b1
+			>;
+		};
+		
+		pinctrl_ecspi3: ecspi3grp {
+			fsl,pins = <
+				MX6UL_PAD_UART2_RTS_B__ECSPI3_MISO	0x1b0b1
+				MX6UL_PAD_UART2_CTS_B__ECSPI3_MOSI	0x1b0b1
+				MX6UL_PAD_UART2_RX_DATA__ECSPI3_SCLK 0x1b0b1
+				MX6UL_PAD_UART2_TX_DATA__ECSPI3_SS0	0x1b0b1
+			>;
+		};
+		
 		pinctrl_uart1: uart1grp {
 			fsl,pins = <
 				MX6UL_PAD_UART1_TX_DATA__UART1_DCE_TX 0x1b0b1
@@ -929,7 +956,7 @@
 		};
 	};
 };
-
+/* by qinjx 20200426
 &lcdif {
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_lcdif_dat
@@ -943,7 +970,7 @@
 
 		display-timings {
 			native-mode = <&timing0>;
-
+*/
 /*
 			timing0: timing0 {
 			mode_name = "hdmi";
@@ -983,6 +1010,7 @@
 			pixelclk-active = <0>;
 			};
 */
+/*by qinjx 20200426
 			timing0: timing0 {
 			mode_name = "TFT50AB";
 			clock-frequency = <27000000>;
@@ -999,7 +1027,7 @@
 			vsync-active = <0>;
 			de-active = <1>;
 			pixelclk-active = <0>;
-			};
+			};*/
 /*
 			timing2: timing2 {
 			mode_name = "TFT70AB";
@@ -1019,9 +1047,10 @@
 			pixelclk-active = <0>;
 			};
 */
+/*by qinjx 20200426
 		};
 	};
-};
+};*/
 
 &pwm1 {
 	pinctrl-names = "default";
@@ -1096,16 +1125,16 @@
 	/* for DTE mode, add below change
 	/* fsl,dte-mode;
 	/*pinctrl-0 = <&pinctrl_uart2dte>;
-	status = "disable";
+	status = "okay";
 };*/
-
+/*
 &uart2{
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_485>;
 	fsl,rs485-gpio-txen = <&gpio1 31 GPIO_ACTIVE_HIGH>;
 	linux,rs485-enabled-at-boot-time;
 	status = "disable";
-};
+};*/
 
 &uart3{
 	pinctrl-names = "default";

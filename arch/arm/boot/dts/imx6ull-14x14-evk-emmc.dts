@@ -21,3 +21,49 @@
 	non-removable;
 	status = "okay";
 };
+
+&ecspi3 {
+	fsl,spi-num-chipselects = <1>;
+	/*cs-gpios = <&gpio5 29 0>;*/
+	cs-gpios = <0>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_ecspi3>;
+	status = "okay";
+	
+	spidev@0 {
+		reg = <0>;      /* CS0 */
+		compatible = "spidev";
+		spi-max-frequency = <40000000>;
+	};
+};
+
+&ecspi2 {
+	fsl,spi-num-chipselects = <1>;
+	/*cs-gpios = <&gpio5 29 0>;*/
+	cs-gpios = <0>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_ecspi2>;
+	status = "okay";
+	
+	spidev@0 {
+		reg = <0>;      /* CS0 */
+		compatible = "spidev";
+		spi-max-frequency = <40000000>;
+	};
+};
+
+&ecspi1 {
+	fsl,spi-num-chipselects = <1>;
+	/*cs-gpios = <&gpio5 29 0>;*/
+	cs-gpios = <0>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_ecspi1>;
+	status = "okay";
+	
+	spidev@0 {
+		reg = <0>;      /* CS0 */
+		compatible = "spidev";
+		spi-max-frequency = <40000000>;
+	};
+};
+
